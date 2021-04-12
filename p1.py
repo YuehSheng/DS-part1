@@ -11,6 +11,8 @@ data = data.sort_values(by='總人口數')
 people = {'總人口數': data['總人口數']} 
 
 print(data['總人口數'].sum())
+
+# 將 <2% 歸類到其他
 threshold = data[data['總人口數'] > data['總人口數'].sum()/100*2]
 rest = data[data['總人口數'] <= data['總人口數'].sum()/100*2]['總人口數'].sum()
 
